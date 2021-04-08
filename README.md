@@ -26,7 +26,7 @@ Build Contaier:
 `docker build . -t viper`
 
 Run Container:
-`docker run -it -e VI_PLUS_API_KEY=YOURAPIKEYHERE--mount type=bind,source="$(pwd)"/data,target=/data  viper`
+`docker run -it -e VI_PLUS_API_KEY=YOURAPIKEYHERE --mount type=bind,source="$(pwd)"/data,target=/data  viper`
 
 ## Notes
 
