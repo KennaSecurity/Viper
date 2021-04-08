@@ -1,6 +1,6 @@
 # Viper
 
-Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrvial tool designed to retrieve large datasets from the [Kenna API](https://apidocs.kennasecurity.com/reference) simple.
+Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrvial tool designed to retrieve large datasets from the [Kenna API](https://apidocs.kennasecurity.com/reference) quickly and efficiently.
 
 ## Configuration and Customization
 

@@ -1,14 +1,13 @@
 import requests
 import json
 import jsonlines
-import pandas as pd
+import pandas
 import os
 
 vi_plus_api_key = os.environ.get('VI_PLUS_API_KEY')
 headers = {'X-Risk-Token': vi_plus_api_key}
 cve_list_output_json_file = 'cve_list.json'
 output_jsonl_file = 'cves.jsonl'
-
 
 def chunks(lst, n):
     for i in range(0, len(lst), n):
@@ -45,6 +44,6 @@ def import_cves():
 
 if __name__ == '__main__':
     import_cves()
-    df = pd.read_json (r'cves.jsonl', lines=True)
+    df = pandas.read_json (r'cves.jsonl', lines=True)
     df.to_json(r'data/vidata.json', orient='records', lines=True)
     df.to_csv(r'data/vidata.csv', orient='records', index=False)
