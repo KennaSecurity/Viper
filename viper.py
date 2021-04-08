@@ -46,4 +46,4 @@ if __name__ == '__main__':
     import_cves()
     df = pandas.read_json (r'cves.jsonl', lines=True)
     df.to_json(r'data/vidata.json', orient='records', lines=True)
-    df.to_csv(r'data/vidata.csv', orient='records', index=False)
+    df.to_csv(r'data/vidata.csv', index=False)

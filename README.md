@@ -14,7 +14,7 @@ You can comment out either of the following lines to limit the output to only th
 
 `df.to_json(r'data/vidata.json', orient='records', lines=True)`
 
-`df.to_csv(r'data/vidata.csv', orient='records', index=False)`
+`df.to_csv(r'data/vidata.csv', index=False)`
 
 It is also simple to export this data to any of the other formats that Pandas has a [library](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html) for that would be useful in your enviroment.
 
