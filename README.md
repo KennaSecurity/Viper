@@ -4,7 +4,7 @@ Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrvi
 
 ## Configuration and Customization
 
-In the default configuration VIPER will pull all the vulnerability definitions from the VI+ database and save them in both a JSON(L) file and a CSV.
+In the default configuration VIPER will pull all the vulnerability definitions from the VI+ database and save them in both a [JSON(L)](https://jsonlines.org/) file and a CSV.
 
 You can edit this date line to only pull vulnerability definitions that were updated in the AP after the stated date:
 
