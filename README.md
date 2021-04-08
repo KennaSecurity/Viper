@@ -1,6 +1,6 @@
 # Viper
 
-Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrvial tool designed to retrieve large datasets from the [Kenna API](https://apidocs.kennasecurity.com/reference) quickly and efficiently.
+Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrieval tool designed to retrieve large datasets from the [Kenna API](https://apidocs.kennasecurity.com/reference) quickly and efficiently.
 
 ## Configuration and Customization
 
@@ -28,6 +28,6 @@ Run The Container:
 
 ## Notes
 
-- A full run pulles over 200,000 vulnerability definitions and takes around 90 minutes to complete.
+- A full run pulls over 200,000 vulnerability definitions and takes around 90 minutes to complete.
 - Output size of the JSON and CSV will be over 1GB.
 - A run for all CVEs update in 2021 took around 5 minutes in April 2020.
