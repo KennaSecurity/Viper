@@ -4,9 +4,9 @@ Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrvi
 
 ## Configuration and Customization
 
-In the default configuration VIPER will pull all the CVES from the VI+ database and save them in both a JSON(L) file and a CSV.
+In the default configuration VIPER will pull all the vulnerability definitions from the VI+ database and save them in both a JSON(L) file and a CSV.
 
-You can edit this date line to only pull CVEs that were updated in the AP after the stated date:
+You can edit this date line to only pull vulnerability definitions that were updated in the AP after the stated date:
 
 `updated_since = '2000-01-01T00:00:00+0000'`
 
@@ -30,6 +30,6 @@ Run Container:
 
 ## Notes
 
-- A full run pulles over 200,000 CVEs and takes around 90 minutes to complete.
-- Output size of the JSON and CVE will be over 1GB.
+- A full run pulles over 200,000 vulnerability definitions and takes around 90 minutes to complete.
+- Output size of the JSON and CSV will be over 1GB.
 - A run for all CVEs update in 2021 took around 5 minutes in April 2020.
