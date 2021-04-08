@@ -20,12 +20,10 @@ It is also simple to export this data to any of the other formats that Pandas ha
 
 ## Usage
 
-Update  `updated_since` in the viper script to limit the CVEs to pull or commment it out to pull all data.
-
-Build Contaier:
+Build The Contaier:
 `docker build . -t viper`
 
-Run Container:
+Run The Container:
 `docker run -it -e VI_PLUS_API_KEY=YOURAPIKEYHERE --mount type=bind,source="$(pwd)"/data,target=/data  viper`
 
 ## Notes
