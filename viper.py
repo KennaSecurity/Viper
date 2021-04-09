@@ -4,7 +4,7 @@ import jsonlines
 import pandas
 import os
 
-vi_plus_api_key = os.environ.get('VI_PLUS_API_KEY')
+vi_plus_api_key = os.environ.get('VI_Plus_API_Key')
 headers = {'X-Risk-Token': vi_plus_api_key}
 cve_list_output_json_file = 'cve_list.json'
 output_jsonl_file = 'cves.jsonl'
@@ -15,7 +15,7 @@ def chunks(lst, n):
 
 def import_cves():
   params = {}
-  updated_since = '2000-01-01T00:00:00+0000'
+  updated_since = os.environ.get('Updated_Since') 
   if updated_since:
      params['updated_since'] = updated_since
 

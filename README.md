@@ -2,29 +2,78 @@
 
 Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrieval tool designed to retrieve large datasets from the [Kenna API](https://apidocs.kennasecurity.com/reference) quickly and efficiently.
 
-## Configuration and Customization
+## Basic Usage
+
+**Pull The Docker Container:**
+
+```bash
+docker pull kennasecurity/viper
+```
+
+**Run The Container To Retrive All Vulnerability Definitions:**
+
+```bash
+docker run -it \
+--env VI_Plus_API_Key=YOURAPIKEYHERE \
+--mount type=bind,source="$(pwd)"/data,target=/data \
+kennasecurity/viper
+```
+
+**Run The Container To Retrive All Vulnerability Definitions Update Since A Specific Date:**
+
+```bash
+docker run -it \
+--env VI_Plus_API_Key=YOURAPIKEYHERE \
+--env Updated_Since=2021-04-01T00:00:00+0000 \
+--mount type=bind,source="$(pwd)"/data,target=/data \
+kennasecurity/viper
+```
+
+## Advanced Usage
+
+**Clone The Repo:**
+
+```bash
+git clone https://github.com/KennaSecurity/Viper
+```
+
+**Customize The Python Script:**
 
 In the default configuration VIPER will pull all the vulnerability definitions from the VI+ database and save them in both a [JSON(L)](https://jsonlines.org/) file and a CSV.
 
-You can edit this date line to only pull vulnerability definitions that were updated in the AP after the stated date:
-
-`updated_since = '2000-01-01T00:00:00+0000'`
-
 You can comment out either of the following lines to limit the output to only the one you need:
 
-`df.to_json(r'data/vidata.json', orient='records', lines=True)`
-
-`df.to_csv(r'data/vidata.csv', index=False)`
+```bash
+df.to_json(r'data/vidata.json', orient='records', lines=True)
+df.to_csv(r'data/vidata.csv', index=False)
+```
 
 It is also simple to export this data to any of the other formats that Pandas has a [library](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html) for that would be useful in your environment.
 
-## Usage
+**Build The Container:**
 
-Build The Container:
-`docker build . -t viper`
+```bash
+docker build . -t viper
+```
 
-Run The Container:
-`docker run -it -e VI_PLUS_API_KEY=YOURAPIKEYHERE --mount type=bind,source="$(pwd)"/data,target=/data  viper`
+**Run The Container To Retrive All Vulnerability Definitions:**
+
+```bash
+docker run -it \
+--env VI_Plus_API_Key=YOURAPIKEYHERE \
+--mount type=bind,source="$(pwd)"/data,target=/data \
+viper
+```
+
+**Run The Container To Retrive All Vulnerability Definitions Update Since A Specific Date:**
+
+```bash
+docker run -it \
+--env VI_Plus_API_Key=YOURAPIKEYHERE \
+--env Updated_Since=2021-04-01T00:00:00+0000 \
+--mount type=bind,source="$(pwd)"/data,target=/data \
+viper
+```
 
 ## Notes
 
