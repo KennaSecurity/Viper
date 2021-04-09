@@ -19,7 +19,7 @@ docker run -it \
 kennasecurity/viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions Update Since A Specific Date:**
+**Run The Container To Retrive All Vulnerability Definitions Updated Since A Specific Date:**
 
 ```bash
 docker run -it \
@@ -65,7 +65,7 @@ docker run -it \
 viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions Update Since A Specific Date:**
+**Run The Container To Retrive All Vulnerability Definitions Updated Since A Specific Date:**
 
 ```bash
 docker run -it \
