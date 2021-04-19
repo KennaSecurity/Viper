@@ -19,16 +19,6 @@ docker run -it \
 kennasecurity/viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions Updated Since A Specific Date:**
-
-```bash
-docker run -it \
---env VI_Plus_API_Key=YOURAPIKEYHERE \
---env Updated_Since=2021-04-01T00:00:00+0000 \
---mount type=bind,source="$(pwd)"/data,target=/data \
-kennasecurity/viper
-```
-
 ## Advanced Usage
 
 **Clone The Repo:**
@@ -65,18 +55,7 @@ docker run -it \
 viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions Updated Since A Specific Date:**
-
-```bash
-docker run -it \
---env VI_Plus_API_Key=YOURAPIKEYHERE \
---env Updated_Since=2021-04-01T00:00:00+0000 \
---mount type=bind,source="$(pwd)"/data,target=/data \
-viper
-```
-
 ## Notes
 
 - A full run pulls over 200,000 vulnerability definitions and takes around 90 minutes to complete.
 - Output size of the JSON and CSV will be over 1GB.
-- A run for all CVEs update in 2021 took around 5 minutes in April 2020.
