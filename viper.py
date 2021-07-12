@@ -9,7 +9,7 @@ from requests.packages.urllib3.util.retry import Retry
 vi_plus_api_key = os.environ.get('VI_Plus_API_Key')
 headers = {'X-Risk-Token': vi_plus_api_key}
 cve_list_output_json_file = 'cve_list.json'
-output_jsonl_file = 'cves.jsonl'
+output_jsonl_file = 'data/vidata.json'
 
 def requests_retry_session(
     retries=3,
@@ -65,6 +65,5 @@ def import_cves():
 
 if __name__ == '__main__':
     import_cves()
-    df = pandas.read_json (r'cves.jsonl', lines=True)
-    df.to_json(r'data/vidata.json', orient='records', lines=True)
+    df = pandas.read_json (r'data/vidata.json', lines=True)
     df.to_csv(r'data/vidata.csv', index=False)
