@@ -79,4 +79,4 @@ viper
 
 - A full run pulls over 200,000 vulnerability definitions and takes around 90 minutes to complete.
 - Output size of the JSON and CSV will be over 1GB.
-- A run for all CVEs update in 2021 took around 5 minutes in April 2020.
+- A run for all CVEs updated in 2021 took around 45 minutes in July 2021 (~68000 CVEs).
