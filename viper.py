@@ -11,6 +11,12 @@ headers = {'X-Risk-Token': vi_plus_api_key}
 cve_list_output_json_file = 'cve_list.json'
 output_jsonl_file = 'data/vidata.json'
 
+if os.environ.get('API') is None:
+  API = 'api.kennasecurity.com'
+else:
+  API =  os.environ.get('API')
+
+
 def requests_retry_session(
     retries=3,
     backoff_factor=0.3,
@@ -40,7 +46,8 @@ def import_cves():
   updated_since = os.environ.get('Updated_Since') 
   if updated_since:
      params['updated_since'] = updated_since
-  r = requests_retry_session().get('https://api.kennasecurity.com/vulnerability_definitions/cve_identifiers', params=params, headers=headers)
+  import_cves_url = 'https://' + API + '/vulnerability_definitions/cve_identifiers'
+  r = requests_retry_session().get( import_cves_url, params=params, headers=headers)
   json_cve_ids = r.json()
   cve_ids = json_cve_ids['cve_identifiers']
   print(f'Pulling {len(cve_ids)} CVEs')
@@ -55,7 +62,8 @@ def import_cves():
     cve_ids = cve_ids[page_size:]
     i = 0
     while len(cve_ids_page) > 0:
-      r = requests_retry_session().get('https://api.kennasecurity.com/vulnerability_definitions', params={'cves': ','.join(cve_ids_page)}, headers=headers)
+      request_cves_url = 'https://' + API + '/vulnerability_definitions/'
+      r = requests_retry_session().get(request_cves_url, params={'cves': ','.join(cve_ids_page)}, headers=headers)
       json_cves = r.json()
       for cve_id, cve_dict in json_cves.items():
         writer.write(cve_dict)
