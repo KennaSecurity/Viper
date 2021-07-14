@@ -16,7 +16,7 @@ docker pull kennasecurity/viper
 docker run -it \
 --env VI_Plus_API_Key=YOURAPIKEYHERE \
 --env Updated_Since=2021-07-01T00:00:00+0000 \
---env API=api.kennasecurity.com \
+--env API_Host=api.kennasecurity.com \
 --mount type=bind,source="$(pwd)"/data,target=/data \
 kennasecurity/viper
 ```
@@ -27,7 +27,7 @@ kennasecurity/viper
 docker run -it \
 --env VI_Plus_API_Key=YOURAPIKEYHERE \
 --env Updated_Since=2021-07-01T00:00:00+0000 \
---env API=api.kennasecurity.com \
+--env API_Host=api.kennasecurity.com \
 --mount type=bind,source="$(pwd)"/data,target=/data \
 kennasecurity/viper
 ```
@@ -65,7 +65,7 @@ docker build . -t viper
 docker run -it \
 --env VI_Plus_API_Key=YOURAPIKEYHERE \
 --env Updated_Since=2000-01-01T00:00:00+0000 \
---env API=api.kennasecurity.com \
+--env API_Host=api.kennasecurity.com \
 --mount type=bind,source="$(pwd)"/data,target=/data \
 viper
 ```
@@ -76,7 +76,7 @@ viper
 docker run -it \
 --env VI_Plus_API_Key=YOURAPIKEYHERE \
 --env Updated_Since=2021-07-01T00:00:00+0000 \
---env API=api.kennasecurity.com \
+--env API_Host=api.kennasecurity.com \
 --mount type=bind,source="$(pwd)"/data,target=/data \
 viper
 ```
