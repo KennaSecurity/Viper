@@ -15,7 +15,7 @@ docker pull kennasecurity/viper
 ```bash
 docker run -it \
 --env VI_Plus_API_Key=YOURAPIKEYHERE \
---env Updated_Since=2021-07-01T00:00:00+0000 \
+--env Updated_Since=2000-01-01T00:00:00+0000 \
 --env API_Host=api.kennasecurity.com \
 --mount type=bind,source="$(pwd)"/data,target=/data \
 kennasecurity/viper
