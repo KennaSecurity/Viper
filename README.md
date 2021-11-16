@@ -10,7 +10,7 @@ Viper is a [VI+](https://www.kennasecurity.com/products/vi/) API Enhanced Retrie
 docker pull kennasecurity/viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions:**
+**Run The Container To Retrieve All Vulnerability Definitions:**
 
 ```bash
 docker run -it \
@@ -21,7 +21,7 @@ docker run -it \
 kennasecurity/viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions Updated Since A Specific Date:**
+**Run The Container To Retrieve All Vulnerability Definitions Updated Since A Specific Date:**
 
 ```bash
 docker run -it \
@@ -30,6 +30,17 @@ docker run -it \
 --env API_Host=api.kennasecurity.com \
 --mount type=bind,source="$(pwd)"/data,target=/data \
 kennasecurity/viper
+```
+
+**Run The Container To Retrieve All Vulnerability Definitions in JSON Format Only:**
+
+```bash
+docker run -it \
+--env VI_Plus_API_Key=YOURAPIKEYHERE \
+--env JSON_Only=1 \
+--env API_Host=api.kennasecurity.com \
+--mount type=bind,source="$(pwd)"/data,target=/data \
+viper
 ```
 
 ## Advanced Usage
@@ -59,7 +70,7 @@ It is also simple to export this data to any of the other formats that Pandas ha
 docker build . -t viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions:**
+**Run The Container To Retrieve All Vulnerability Definitions:**
 
 ```bash
 docker run -it \
@@ -70,7 +81,7 @@ docker run -it \
 viper
 ```
 
-**Run The Container To Retrive All Vulnerability Definitions Updated Since A Specific Date:**
+**Run The Container To Retrieve All Vulnerability Definitions Updated Since A Specific Date:**
 
 ```bash
 docker run -it \
