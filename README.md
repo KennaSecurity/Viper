@@ -92,7 +92,6 @@ docker run -it \
 viper
 ```
 
-
 ## Notes
 
 - You will need to set the API to match your host as [described here](https://apidocs.kennasecurity.com/reference#authentication). It will default to the base API of [api.kennasecurity.com](https://api.kennasecurity.com).

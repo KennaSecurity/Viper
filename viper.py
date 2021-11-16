@@ -90,4 +90,3 @@ if __name__ == "__main__":
 
     if not json_only:
         df.to_csv(r"data/vidata.csv", index=False)
-
