@@ -82,12 +82,6 @@ def import_cves():
 
 
 if __name__ == "__main__":
-
-    json_only = int(os.environ.get("JSON_Only"))
-
     import_cves()
     df = pandas.read_json(r"data/vidata.json", lines=True)
-
-    if not json_only:
-        df.to_csv(r"data/vidata.csv", index=False)
-
+    
