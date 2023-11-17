@@ -97,4 +97,3 @@ viper
 - You will need to set the API to match your host as [described here](https://apidocs.kennasecurity.com/reference#authentication). It will default to the base API of [api.kennasecurity.com](https://api.kennasecurity.com).
 - A full run pulls over 200,000 vulnerability definitions and takes around 90 minutes to complete.
 - Output size of the JSON and CSV will be over 1GB.
-- A run for all CVEs updated in 2021 took around 45 minutes in July 2021 (~68000 CVEs).
