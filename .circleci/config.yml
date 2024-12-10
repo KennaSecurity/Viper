@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Tag Docker Image
           command: |
-            docker tag kennasecurity/viper $ARTIFACTORY_URL/cvm-viper-docker-local/kennasecurity/viper:$CIRCLE_SHA1
+            docker tag kennasecurity/viper $ARTIFACTORY_URL/cvm-viper-docker-local/viper:$CIRCLE_SHA1
       - run:
           name: Authenticate with Artifactory
           command: |
@@ -31,8 +31,8 @@ jobs:
       - run:
           name: Push Docker Image to Artifactory
           command: |
-            docker push $ARTIFACTORY_URL/cvm-viper-docker-local/kennasecurity/viper:latest
-            docker push $ARTIFACTORY_URL/cvm-viper-docker-local/kennasecurity/viper:$CIRCLE_SHA1
+            docker push $ARTIFACTORY_URL/cvm-viper-docker-local/viper:latest
+            docker push $ARTIFACTORY_URL/cvm-viper-docker-local/viper:$CIRCLE_SHA1
 workflows:
   version: 2
   build_and_deploy:
@@ -42,4 +42,5 @@ workflows:
           filters:
             branches:
               only:
+                - main
                 - cmans/artifactory-upload
