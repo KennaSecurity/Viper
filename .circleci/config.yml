@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Tag Docker Image
           command: |
-            docker tag kennasecurity/viper artifactory.devhub-cloud.cisco.com/cvm-viper-docker-local/kennasecurity/viper:latest
+            docker tag kennasecurity/viper $ARTIFACTORY_URL/cvm-viper-docker-local/kennasecurity/viper:latest
       - run:
           name: Authenticate with Artifactory
           command: |
@@ -31,12 +31,13 @@ jobs:
       - run:
           name: Push Docker Image to Artifactory
           command: |
-            docker push artifactory.devhub-cloud.cisco.com/cvm-viper-docker-local/kennasecurity/viper:latest
+            docker push $ARTIFACTORY_URL/cvm-viper-docker-local/kennasecurity/viper:latest
 workflows:
   version: 2
   build_and_deploy:
     jobs:
       - build_and_push:
+          context: devhub-artifactory
           filters:
             branches:
               only:
