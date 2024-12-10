@@ -19,11 +19,11 @@ jobs:
       - run:
           name: Build Docker Image
           command: |
-            docker build . -t viper:latest
+            docker build . -t viper
       - run:
           name: Tag Docker Image
           command: |
-            docker tag kennasecurity/viper $ARTIFACTORY_URL/cvm-viper-docker-local/viper:$CIRCLE_SHA1
+            docker tag kennasecurity/viper $ARTIFACTORY_URL/cvm-viper-docker-local/viper:$CIRCLE_SHA1 $ARTIFACTORY_URL/cvm-viper-docker-local/viper:latest
       - run:
           name: Authenticate with Artifactory
           command: |
