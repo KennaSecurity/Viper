@@ -42,7 +42,9 @@ workflows:
   build_and_deploy:
     jobs:
       - build_and_push:
-          context: devhub-artifactory
+          context: 
+            - devhub-artifactory
+            - dockerhub
           filters:
             branches:
               only:
